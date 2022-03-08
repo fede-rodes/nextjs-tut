@@ -1,11 +1,20 @@
+import Head from 'next/head'
 import Layout from '../../components/layout'
-import { getSortedPostsData } from '../../lib/posts'
-import { getPostById } from '../../lib/posts-by-id'
+import { getSortedPostsData, getPostById } from '../../lib/posts'
 
 export default function Post({ post }) {
   return (
     <Layout>
-      {JSON.stringify(post)}
+      <Head>
+        <title>{post.title}</title>
+      </Head>
+      {post.title}
+      <br />
+      {post.id}
+      <br />
+      <Date dateString={post.date} />
+      <br />
+      <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
     </Layout>
   )
 }
@@ -20,9 +29,11 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+// Do params come from router?
+export async function getStaticProps(props) {
+  console.log({ props })
   // Fetch necessary data for the blog post using params.id
-  const post = getPostById(params.id)
+  const post = await getPostById(props.params.id)
   return {
     props: {
       post,
