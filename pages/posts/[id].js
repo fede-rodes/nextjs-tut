@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Layout from '../../components/layout'
-import { getSortedPostsData, getPostById } from '../../lib/posts'
+import Layout from 'components/layout'
+import { getSortedPostsData, getPostById } from 'lib/posts'
 
 export default function Post({ post }) {
   return (

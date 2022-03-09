@@ -1,4 +1,4 @@
-import '../styles/global.css'
+import 'styles/global.css'
 /*
 Global styles/logic. Entry point.
 This App component is the top-level component which will be common across all the different pages.
