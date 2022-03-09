@@ -44,7 +44,7 @@ export default function Home({ posts }) {
 export async function getStaticProps() {
   return {
     props: {
-      posts: getSortedPostsData()
-    }
+      posts: getSortedPostsData(),
+    },
   }
 }

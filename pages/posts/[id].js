@@ -38,6 +38,6 @@ export async function getStaticProps(props) {
   return {
     props: {
       post,
-    }
+    },
   }
 }
