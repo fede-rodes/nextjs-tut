@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout from 'components/layout'
+import Date from 'components/date'
 import { getSortedPostsData, getPostById } from 'lib/posts'
 
 export default function Post({ post }) {
